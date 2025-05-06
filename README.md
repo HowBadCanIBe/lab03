@@ -164,16 +164,39 @@ target_link_libraries(solver formatter_ex_lib solver_lib)
 cd ..
 cd solver_application/
 cat > CMakeLists.txt
-cmake_minimum_required(VERSION 3.4)
-project(solver)
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib formatter_ex_lib_dir)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib solver_lib_dir)
-add_executable(solver ${CMAKE_CURRENT_SOURCE_DIR}/equation.cpp)
-target_include_directories(formatter_ex_lib PUBLIC
-${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib
-${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib
-)
-target_link_libraries(solver formatter_ex_lib solver_lib)
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Deprecation Warning at /home/linux-svyat/HowBadCanIBe/workspace/projects/lab03/formatter_ex_lib/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Deprecation Warning at /home/linux-svyat/HowBadCanIBe/workspace/projects/lab03/formatter_lib/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Deprecation Warning at /home/linux-svyat/HowBadCanIBe/workspace/projects/lab03/solver_lib/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/linux-svyat/HowBadCanIBe/workspace/projects/lab03/solver_application/build
 ```
