@@ -106,6 +106,17 @@ cmake --build build
 
     hello_world, которое использует библиотеку formatter_ex;
     solver, приложение которое испольует статические библиотеки formatter_ex и solver_lib.
+```sh
+cat > CMakeFiles.txt
+cmake_minimum_required(VERSION 3.4)
+project(hello_world)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib formatter_ex_lib_dir)
+add_executable(hello_world ${CMAKE_CURRENT_SOURCE_DIR}/hello_world.cpp)
+target_include_directories(hello_world PUBLIC
+${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib
+)
 cmake -B build
 CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
   Compatibility with CMake < 3.5 will be removed from a future version of
